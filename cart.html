@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <style>
+      *{
+  scroll-behavior: smooth;
+}
+
+.navbar{
+  font-size: 1.25rem;
+}
+.navbar-brand img{
+  height: 50px;
+  margin-left: 20px;
+  border: 3px solid grey;
+  border-radius: 5px;
+}
+
+.search{
+  margin-right: 30px;
+}
+
+#cart{
+  background-color:#eee6ff;
+}
+
+.sum{
+  background-color:#eee6ff;
+}
+    
+.prod{
+  background-image: linear-gradient(to right,#ddccff 20%,#ccb3ff 20%,#bb99ff 20%,#aa80ff 20%
+                                   ,#9966ff 20%)
+}
+
+.remove{
+  text-decoration:none;
+  color:black;
+  padding: 4px;
+  background-color:#0080ff;
+  border: 2px solid lightblue;
+  border-radius:5px;
+}
+
+      #footer_section{
+  background-color:lightgray;
+}
+
+#footer_section a{
+  text-decoration: none;
+  color: black;
+}
+    </style>
+
+    <title>Cart</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-precomposed.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    
+  </head>
+  
+  <body>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <section class="header_menu" id="header_menu">
+<div class="container-fluid px-0 shadow">
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+<a class="navbar-brand pl-5 pl-small-0" href="index.html">
+<img src="images/logo.png" class="img img-fluid" width="120px" alt="logo">
+</a>
+<button class="navbar-toggler" 
+type="button" 
+data-bs-toggle="collapse"
+data-bs-target="#navbarSupportedContent"
+aria-controls="navbarSupportedContent" 
+aria-expanded="false"
+aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item active">
+<a class="nav-link" href="index.html">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="product.html">Product</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="category.html">Category</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about.html">About Us</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact.html">Contact Us</a>
+</li>
+</ul>
+<div class="search mr-3">
+<a href="search.html" class="btn btn-sm btn-outline-primary">
+Search
+</a>
+</div>
+<div class="cart">
+<a href="cart.html">
+<i class="fas fa-shopping-cart fa-2x"></i>
+</a>
+</div>
+</div>
+</nav>
+</div>
+</section>
+
+    <section class="cart py-5 my-5 mb-0" id="cart">
+<div class="container ">
+<div class="section_title text-center mb-5">
+<h1 class="text-capitalize">Cart</h1>
+</div>
+<div class="row bg_cart_1 rounded">
+<!--Grid column-->
+<div class="col-md-8 border-right">
+<!-- Card -->
+<div class="mb-3">
+<div class="pt-4">
+<h5 class="mb-4">Cart (<span>2</span> items)</h5>
+<div class="row mb-4 py-5 prod">
+<div class="col-md-5 col-lg-3 col-xl-3">
+<div class="rounded mb-3 mb-md-0">
+<img class="img-fluid w-100 rounded" src="Products/cart_img1.jpg" alt="Processor">
+</div>
+</div>
+<div class="col-md-7 col-lg-9 col-xl-9">
+<div>
+<div class="d-flex justify-content-between">
+<div>
+<h5>AMD 5000 Series Ryzen 5 5600X Processor</h5>
+<p class="mb-3 text-muted text-uppercase small">Style name: Ryzen 5 5600X</p>
+</div>
+<div>
+<div class="mb-0 w-100">
+<button
+onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+class="btn btn-sm btn-outline-dark">
+<i class="fas fa-minus"></i> < </button>
+<input class="quantity text-center" min="0" max="10"
+name="quantity" value="1" type="number">
+<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+class="btn btn-sm btn-outline-dark">
+<i class="fas fa-plus"></i> > </button>
+</div>
+<small class="form-text text-muted text-center">
+</small>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<div>
+<a href="javascript:;" type="button" class="small text-uppercase mr-3 remove">
+<i class="fas fa-trash-alt mr-1"></i> Remove item </a>
+</div>
+<p class="mb-0"><span><strong
+id="summary">₹23,699.00</strong></span></p
+class="mb-0">
+</div>
+</div>
+</div>
+</div>
+<hr class="mb-4">
+<div class="row py-5 prod">
+<div class="col-md-5 col-lg-3 col-xl-3">
+<div class="rounded mb-3 mb-md-0">
+<img class="img-fluid w-100 rounded" src="Products/product5.jpg" alt="Game">
+</div>
+</div>
+<div class="col-md-7 col-lg-9 col-xl-9">
+<div>
+<div class="d-flex justify-content-between">
+<div>
+<h5>Elden Ring</h5>
+<p class="mb-3 text-muted text-uppercase small">16+ </p>
+<p class="mb-2 text-muted text-uppercase small">Strong Violence</p>
+</div>
+<div>
+<div class="mb-0 w-100">
+<button
+onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+class="btn btn-sm btn-outline-dark">
+<i class="fas fa-minus"></i> < </button>
+<input class="quantity text-center" min="0" max="10"
+name="quantity"
+value="1" type="number">
+<button
+onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+class="btn btn-sm btn-outline-dark">
+<i class="fas fa-plus"></i> > </button>
+</div>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<div>
+<a href="javascript:;" type="button"
+class="card-link-secondary small text-uppercase mr-3 remove">
+<i class="fas fa-trash-alt mr-1"></i> Remove item
+</a>
+</div>
+<p class="mb-0"><span><strong>₹3999.00</strong></span></p
+class="mb-0">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Grid column-->
+<!--Grid column-->
+<div class="col-md-4 rounded">
+<!-- Card -->
+<div class="mb-3">
+<div class="pt-4">
+<h5 class="mb-3">Order summary</h5>
+<ul class="list-group list-group-flush">
+<li
+class="list-group-item d-flex justify-content-between
+align-items-center border-0 px-3 pb-2 sum">
+<span>AMD Processor</span>
+<span>x1</span>
+<span>₹23,699.00</span>
+</li>
+<li
+class="list-group-item d-flex justify-content-between
+align-items-center border-0 px-3 pb-2 sum">
+<span>Elden Ring Game</span>
+<span>x1</span>
+<span>₹27,698.00</span>
+</li>
+<li
+class="list-group-item d-flex justify-content-between
+align-items-center border-top px-3 mb-3 sum">
+<div>
+<strong>Total amount</strong>
+<strong>
+<p class="mb-0">(including VAT)</p>
+</strong>
+</div>
+<span><strong>₹27,698.00</strong></span>
+</li>
+</ul>
+<a href="checkout.html" class="btn btn-primary btn-block">Go to
+Checkout</a>
+</div>
+</div>
+<!-- Card -->
+</div>
+<!--Grid column-->
+</div>
+</div>
+</section>
+
+
+    <section class="footer_section pt-5 pb-2" id="footer_section">
+<footer>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-3 col-6 pl-5 pl-small-15">
+<div class="footer_title">
+<a href="index.html">
+<img src="images/logo.png" width="150px"
+class="img img-fluid" alt="logo"></a>
+</div>
+<div>
+Adding Fun to your Life.
+Fun Filled Futures.
+Lets you Play Better.
+</div>
+</div>
+<div class="col-md-3 col-6">
+<div class="footer_title pt-3 mb-3">
+<h3>Quick Links</h3>
+</div>
+<div class="footer_links">
+<ul>
+<li><a href="about.html">About</a></li>
+<li><a href="javascript:;">Offers & Discounts</a></li>
+<li><a href="javascript:;">Get Coupon</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="col-md-3 col-6">
+<div class="footer_title pt-3 mb-3">
+<h3>New Products</h3>
+</div>
+<div class="footer_links">
+<ul>
+<li><a href="javascript:;">Gaming Accessories</a></li>
+<li><a href="javascript:;">Pc Games</a></li>
+<li><a href="javascript:;">XBOX Games</a></li>
+<li><a href="javascript:;">CPU Accessories</a></li>
+</ul>
+</div>
+</div>
+<div class="col-md-3 col-6">
+<div class="footer_title pt-3 mb-3">
+<h3>Support</h3>
+</div>
+<div class="footer_links">
+<ul>
+<li><a href="javascript:;">Frequently Asked Questions</a></li>
+<li><a href="javascript:;">Terms & Conditions</a></li>
+<li><a href="javascript:;">Privacy Policy</a></li>
+<li><a href="javascript:;">Report a Payment Issue</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="border-top">
+<h6 class="text-center mt-3">Copyright ©2022 @AnishUpganlawar
+</h6>
+</div>
+</footer>
+</section>
+<div class="backtop">
+<a id="button" href="#top" class="btn btn-lg btn-outline-danger" role="button"  style="background-color:#ff3300;">
+<i class="fas fa-chevron-up text-dark">^</i>
+</a>
+</div>
+  </body>
+</html>

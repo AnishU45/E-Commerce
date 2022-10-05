@@ -1,0 +1,46 @@
+*{
+  scroll-behavior: smooth;
+  box-sizing:border-box;
+}
+
+.navbar{
+  font-size: 1.25rem;
+}
+.navbar-brand img{
+  height: 50px;
+  margin-left: 20px;
+  border: 3px solid grey;
+  border-radius: 5px;
+}
+
+.search{
+  margin-right: 30px;
+}
+
+.pr2{
+  height:500px;
+}
+
+#shop_by_category{
+  background-color:#ff3300;
+}
+
+#products{
+  background-color:#ff6600;
+}
+
+.extra_feature{
+  background-color:#ffcc00;
+}
+.feature_box{
+  background-color:#ffff33;
+}
+
+#footer_section{
+  background-color:lightgray;
+}
+
+#footer_section a{
+  text-decoration: none;
+  color: black;
+}
